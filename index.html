@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css">
-    <title></title>
-</head>
-<body>
-    <main>
-        <div id="gameOver">
-            <h2>GAME OVER</h2>
+  </head>
+  <body>
+    <div id="loading">
+    <div>
+      <div>...loading...</div>
+      <div class="progress"><div id="progressbar"></div></div>
+    </div>
+  </div>
+    <div class="gui">
+      <div id="winScreen" class="blackBg">
+        <h2>Wygrałeś</h2>
+        <button>Wróć do menu</button>
+        <button>Zagraj ponownie</button>
+      </div>
+      <div id="deathScreen" class="blackBg">
+        <h2>Game Over</h2>
+        <button>Wróć do menu</button>
+        <button>Spróbuj ponownie</button>
+      </div>
+      <div id="jumpscareScreen" class="blackBg">
+
+      </div>
+      <div id="narratorScreen" class="blackBg">
+        <p id="narratorMessage">Hello World!</p>
+        <button>Skip</button>
+      </div>
+      <div id="messageScreen" class="blackBg">
+        <p id="message">Hello World!</p>
+      </div>
+      <div id="mainMenu">
+        <div>
+          <button>Graj</button>
+          <button>Informacje</button>
         </div>
-    </main>
-</body>
-<script src="script.js"></script>
+      </div>
+    </div>
+  </body>
+  <script src="index.ts" type="module"></script>
 </html>
