@@ -123,7 +123,7 @@ import('@dimforge/rapier3d').then(RAPIER => {
             // cone center of mass is at bottom
             collider.centerOfMass = {x:0, y:0, z:0}
         }
-        world.createCollider(collider, rigidBody.handle);
+        world.createCollider(collider, rigidBody);
 
         let bufferGeometry;
         if (colliderType === 'cube') {
@@ -153,7 +153,7 @@ import('@dimforge/rapier3d').then(RAPIER => {
     let bodyDesc = RAPIER.RigidBodyDesc.kinematicPositionBased().setTranslation(-1, 3, 1)
     let rigidBody = world.createRigidBody(bodyDesc);
     let dynamicCollider = RAPIER.ColliderDesc.ball(CONTROLLER_BODY_RADIUS);
-    world.createCollider(dynamicCollider, rigidBody.handle);
+    world.createCollider(dynamicCollider, rigidBody);
     characterControls = new CharacterControls(playerBean, orbitControls, camera,  'Idle', new RAPIER.Ray({ x: 0, y: 0, z: 0 },{ x: 0, y: -1, z: 0}), rigidBody);
 
     const clock = new THREE.Clock();
