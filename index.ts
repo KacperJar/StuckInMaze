@@ -23,7 +23,6 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true
 
 // Kontrola kamery
-
 const orbitControls = new OrbitControls(camera, renderer.domElement);
 orbitControls.mouseButtons = {
 	MIDDLE: THREE.MOUSE.ROTATE,

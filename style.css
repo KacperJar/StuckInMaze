@@ -1,18 +1,31 @@
 @font-face {
   font-family: 'comic-sans';
-  src: url('/font/providence-bold.regular.ttf');
+  src: url('/static/font/Comic\ Sans\ MS.ttf');
 }
 
+* {
+    font-family: 'comic-sans';
+}
 body {
     width: 100vw;
     height: 100vh;
     margin: 0px;
+    overflow: hidden;
 }
 
-main, .gui{
+button {
+    outline: none;
+    border: none;
+    padding: none;
+    cursor: pointer;
+}
+
+.gui{
     width: 100%;
     height: 100%;
-    display: none;
+    color: #d9ed92;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
 }
 
 .blackBg {
@@ -20,21 +33,131 @@ main, .gui{
     color: white;
 }
 
-#winScreen, #deathScreen, #messageScreen, #narratorScreen, #mainMenu{
+#winScreen, #deathScreen, #mainMenu, #difficultySelection{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-#winScreen, #deathScreen {
+#livesScreen {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+#mainMenu {
+    gap: 20px;
+    z-index: 9;
+    background-color: #168AAD;
+    transition: ease-in 0.5s;
+}
+
+#mainMenu h1 {
     font-size: 6em;
+    font-weight: bolder;
 }
 
-#messageScreen {
-    font-size: 5em;
+button{
+    width: 400px;
+    height: 200px;
+    font-size: 4em;
+    border: solid 20px #1E6091;
+    border-radius: 100px;
+    text-transform: uppercase;
+    transition: ease-in-out 0.1s;
+    font-weight: bold;
+    background-color: #1A759F;
+    color: #52B69A;
 }
 
-#narratorScreen {
-    font-size: 3.5em;
+button:hover {
+    scale: 1.2;
+    border: solid 20px #52B69A;
+    background-color: #76C893;
+    color: #D9ED92;
+}
+
+button:active {
+    scale: 0.8;
+    border: solid 20px #99D98C;
+    background-color: #B5E48C;
+    color: #fff;
+}
+
+#difficultySelection {
+    background-color: #168AAD;
+    z-index: 8;
+    transition: ease-in 0.5s;
+}
+
+#difficultySelection h2 {
+    font-size: 4.5em;
+    font-weight: bolder;
+}
+#difficultyButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+#easy {
+    border: solid 20px #1F914C;
+    background-color: #199E3F;
+    color: #71B551;
+}
+
+#easy:hover {
+    border: solid 20px #71B551;
+    background-color: #ADC775;
+    color: #edd993;
+}
+
+#easy:active {
+    border: solid 20px #C2D98D;
+    background-color: #E3E38A;
+    color: #ffffff;
+}
+
+#hard {
+    border: solid 20px #651a11;
+    background-color: #9E191C;
+    color: #b55151;
+}
+
+#hard:hover {
+    border: solid 20px #b56051;
+    background-color: #c79b75;
+    color: #edd593;
+}
+
+#hard:active {
+    border: solid 20px #d9b38d;
+    background-color: #e3d48a;
+    color: #ffffff;
+}
+
+#deathScreen {
+    background-color: #168AAD;
+    transition: ease-in 0.5s;
+    top: -100%;
+    font-size: 6em;
+    display: none;
+}
+
+#deathScreen button {
+    font-size: 0.5em;
 }

@@ -3,44 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="loading">
-    <div>
-      <div>...loading...</div>
-      <div class="progress"><div id="progressbar"></div></div>
-    </div>
-  </div>
-    <div class="gui">
-      <div id="winScreen" class="blackBg">
-        <h2>Wygrałeś</h2>
-        <button>Wróć do menu</button>
-        <button>Zagraj ponownie</button>
-      </div>
-      <div id="deathScreen" class="blackBg">
-        <h2>Game Over</h2>
-        <button>Wróć do menu</button>
-        <button>Spróbuj ponownie</button>
-      </div>
-      <div id="jumpscareScreen" class="blackBg">
 
+    <div class="gui">
+      <div id="livesScreen">
+        <p id="lives">x Lives</p>
       </div>
-      <div id="narratorScreen" class="blackBg">
-        <p id="narratorMessage">Hello World!</p>
-        <button>Skip</button>
-      </div>
-      <div id="messageScreen" class="blackBg">
-        <p id="message">Hello World!</p>
+      <div id="deathScreen">
+        <h2>Game Over</h2>
+        <button id="returnMenuBtn">Wróć do menu</button>
       </div>
       <div id="mainMenu">
-        <div>
-          <button>Graj</button>
-          <button>Informacje</button>
+        <h1>Atak Sześcianów</h1>
+        <button id="playBtn">Graj</button>
+      </div>
+      <div id="difficultySelection">
+        <h2>Wybierz tryb trudności</h2>
+        <div id="difficultyButtons">
+          <button id="easyBtn">Łatwy</button>
+          <button id="mediumBtn">Średni</button>
+          <button id="hardBtn">Trudny</button>
         </div>
       </div>
     </div>
   </body>
-  <script src="index.ts" type="module"></script>
+  
+  <script src="main.js" type="module"></script>
 </html>
